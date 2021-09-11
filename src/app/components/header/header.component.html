@@ -1,0 +1,15 @@
+<header [ngClass]="{'sticky' : isSticky}">
+    <a href="" class="logo">ISP<span>.</span></a>
+    <div class="menuToggle" (click)="toggleMenu()">
+        <!-- <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div> -->
+    </div>
+    
+    <ul class="navigation">
+        <li><a href="#">Find Provider</a></li>
+        <li><a href="#">Review Provider</a></li>
+        <li><a href="#about"(click)="toggleMenu()">About Us</a></li>
+        <li><a href="#contact"(click)="toggleMenu()">Contact</a></li>
+    </ul>
+</header>

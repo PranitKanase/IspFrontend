@@ -1,0 +1,126 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+header.sticky{
+    background: #fff;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+header.sticky .logo{
+    color: #111;
+}
+header .logo span{
+    color: #ff0157;
+}
+header .navigation{
+    position: relative;
+    display: flex;
+}
+header .navigation li{
+    list-style: none;
+    margin-left: 30px;
+}
+header .navigation li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #ff0157;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+header .navigation li:hover::after{
+    width: 100%;
+}
+header .navigation li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+}
+header.sticky .navigation li a{
+    color: #111;
+}
+
+@media(max-width: 991px){
+    header,
+    header.sticky
+    {
+        padding: 10px 20px;
+    }
+    header .navigation{
+        display: none;
+    }
+    header .navigation.active{
+        width: 100%;
+        height: calc(100%-68px);
+        position: fixed;
+        top: 68px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background:#fff;
+
+    }
+    header .navigation li{
+        margin-left: 0;
+    }
+    header .navigation li a{
+        color: #111;
+        font-size: 1.6em;
+    }
+    /* .menuToggle div{
+        width: 25px;
+        height: 5px;
+        background-color: #ff0157;
+        margin: 5px;
+        cursor: pointer;
+    }
+    .menuToggle .active .line1{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .menuToggle .active .line2{
+        opacity: 0;
+    }
+    .menuToggle .active .line3{
+        transform: rotate(45deg) translate(-5px,-6px);
+    } */
+    .menuToggle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(../../../assets/images/menu2.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    .menuToggle.active {
+        background: url(../../../assets/images/close.jpg);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    header.sticky .menuToggle{
+        filter: invert(1);
+    }
+    section{
+        padding: 20px;
+     }
+}
